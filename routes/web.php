@@ -13,10 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/welcome', function () {
-    return view('welcome');
-});
-
 Route::get('/', function () {
     return view('home');
 });
@@ -24,4 +20,16 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('home');
 });
+
+Route::get('/dictionary', function () {
+    return view('dictionary');
+});
+
+Route::get('/dict-hiragana', function () {
+    return view('hiragana');
+})->name('hiragana');
+
+Route::get('/dict-katakana', function () {
+    return view('katakana');
+})->name('katakana');
 
