@@ -33,3 +33,6 @@ Route::get('/dict-katakana', function () {
     return view('katakana');
 })->name('katakana');
 
+Route::get('/score', function () {
+    return view('score');
+});
