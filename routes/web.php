@@ -1,6 +1,8 @@
 <?php
 
+use App\Models\Question;
 use Illuminate\Support\Facades\Route;
+use App\http\Controllers\QuestionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,12 +15,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/', function () {
-    return view('home');
+    return view('home',[
+        'questions'=> Question::where('id',1)->take(1)->get(),
+    ]);
 });
 
 Route::get('/home', function () {
-    return view('home');
+    return view('home',[
+        'questions'=> Question::where('id',1)->get(),
+    ]);
 });
 
 Route::get('/dictionary', function () {
@@ -33,9 +40,9 @@ Route::get('/dict-katakana', function () {
     return view('katakana');
 })->name('katakana');
 
-Route::get('/quiz', function () {
-    return view('quiz');
-});
+Route::get('/{question}',[QuestionController::class,'index']);
+
+Route::post('/submit',[QuestionController::class,'submit']);
   
 Route::get('/score', function () {
     return view('score');

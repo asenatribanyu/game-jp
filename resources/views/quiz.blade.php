@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/quiz.css">
 </head>
 <body>
-
+    {{-- @dd($question->Question); --}}
     <div class="row-top">
         <i class="fa-solid fa-circle-xmark" style="font-size:35px;"></i>
         <span class="header-score"> 1 / 3</span>
@@ -19,22 +19,29 @@
         <section class="quiz-section">
             <div class="quiz-box">
                 <div class="quiz-header">
-                    <span class="question-text">1 Bulan dalam bahasa jepang </span>
-                    <span class="question-text">adalah?…</span>
+                    <span class="question-text">{{ $question->Question }} </span>
                 </div>
                 <div class="option-list">
-                    <div class="option">
-                        <span>Sankagetsu.</span>
-                    </div>
-                    <div class="option">
-                        <span>Yonkagetsu.</span>
-                    </div>
-                    <div class="option">
-                        <span>Ikkagetsu.</span> {{-- jawaban --}}
-                    </div>
-                    <div class="option">
-                        <span>Futsuka.</span>
-                    </div>
+                    <form action="/submit" method="post">
+                        @csrf <input type="hidden" name="id" value="{{ $question->id}}">
+                        <button class="option" type="submit" name="answer" value="{{ $question->Options_1 }}">
+                            
+                            <span>{{ $question->Options_1 }}</span>
+                        </button>
+                        <button class="option" type="submit" name="answer" value="{{ $question->Options_2 }}">
+                            
+                           <span> {{ $question->Options_2 }}</span>
+                        </button>
+                        <button class="option" type="submit" name="answer" value="{{ $question->Options_3 }}">
+                            
+                            <span> {{ $question->Options_3 }}</span>
+                        </button>
+                        <button class="option" type="submit" name="answer" value="{{ $question->Options_4 }}">
+                            
+                            <span>{{ $question->Options_4 }}</span>
+                        </button>
+                    </form>
+                    
                 </div>
                 {{-- <span class="info">2. Lorem ipsu sit amet.</span>
                 <span class="info">3. Lorem, ipsum.</span>

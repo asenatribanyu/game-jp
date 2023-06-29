@@ -20,7 +20,10 @@
 </head>
 
 <body>
-    
+   
+    {{-- @dd($item->id); --}}
+   
+   
     <!-- Navigation Bar -->
     <nav>
         <!-- Mobile Navbar -->
@@ -53,9 +56,11 @@
             <hr class="new1">
 
             <ul>
+                @foreach ($questions as $question)
                 <li><a href="/" ><i class="fa-solid fa-house"></i>Home</a></li>
-                <li><a href="/quiz" ><i class="fa-solid fa-book"></i>Quiz</a></li>
+                <li><a href="/{{ $question->id }}" ><i class="fa-solid fa-book"></i>Quiz</a></li>
                 <li><a href="/dictionary" ><i class="fa-solid fa-language"></i>Dictionary</a></li>
+                @endforeach
             </ul>
         </div>
     </nav>
