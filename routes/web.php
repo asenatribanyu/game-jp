@@ -14,13 +14,29 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Route::get('/home', function () {
     return view('home');
 });
 
+Route::get('/dictionary', function () {
+    return view('dictionary');
+});
+
+Route::get('/dict-hiragana', function () {
+    return view('hiragana');
+})->name('hiragana');
+
+Route::get('/dict-katakana', function () {
+    return view('katakana');
+})->name('katakana');
+
 Route::get('/quiz', function () {
     return view('quiz');
+});
+  
+Route::get('/score', function () {
+    return view('score');
 });
