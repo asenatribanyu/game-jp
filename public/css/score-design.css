@@ -1,8 +1,8 @@
 body {
     background-color: #ffffffff;
     text-align: center;
-    width: 100%;
-    height: 100%;
+    width: 99%;
+    height: 99%;
     font-family: "Quicksand", sans-serif;
 }
 /* .txt{
@@ -93,6 +93,7 @@ body {
     border: 2px solid #7ecf38;
     float: left;
     border-radius: 20px;
+    line-height: 2.5;
 }
 .childd {
     width: 50%;
@@ -103,6 +104,7 @@ body {
     border: 2px solid #7377d2;
     float: left;
     border-radius: 20px;
+    line-height: 2.5;
 }
 .childdd {
     width: 50%;
@@ -113,6 +115,7 @@ body {
     border: 2px solid #f85e5e;
     float: left;
     border-radius: 20px;
+    line-height: 2.5;
 }
 
 .review:hover {
@@ -120,7 +123,7 @@ body {
     width: 200px;
     height: 45px;
     background-color: #ffffff;
-    border-radius: 20px;
+    border-radius: 10px;
     margin-right: 350px;
     font-size: 20px;
 }
@@ -130,7 +133,7 @@ body {
     width: 143px;
     height: 45px;
     background-color: #fdfdfd;
-    border-radius: 20px;
+    border-radius: 10px;
     margin-left: 350px;
     font-size: 20px;
     margin-top: 1%;
@@ -140,19 +143,36 @@ body {
     width: 200px;
     height: 45px;
     background-color: #cf7238;
-    border-radius: 20px;
+    border-radius: 10px;
     margin-right: 350px;
     font-size: 20px;
     margin-top: 1%;
 }
-.cont {
+
+/* card score */
+
+/* card score */
+.button {
+    border-top: 1px solid black;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    text-decoration: none;
+    padding-right: 110px;
+}
+.button .cont {
     display: inline-block;
     width: 143px;
     height: 45px;
     background-color: #7ecf38;
     border-radius: 20px;
-    margin-left: 350px;
+    margin-top: 8px;
     font-size: 20px;
+    text-decoration: none;
 }
 
-/* card score */
+a:link,
+a:visited {
+    text-decoration: none;
+    color: black;
+}

@@ -13,7 +13,7 @@
 <body>
 
 <div class ="container">
-
+    {{-- @dd($total_correct) --}}
     <div class ="text">
         <img src="./img/icon.png" alt="pic.png"
         style="width:30%">
@@ -24,19 +24,19 @@
 
         <div class ="cardCorrect"> Correct
             <div class="child">
-                <div class="correct">99</div>
+                <div class="correct">{{ $total_correct }}</div>
             </div>
         </div>
 
         <div class ="cardScore"> Total Score
             <div class="childd">
-                <div class="score">99%</div>
+                <div class="score">{{ $total_score_percentage }}% </div>
             </div>
         </div>
 
         <div class ="cardIncorrect"> Incorrect
             <div class="childdd">
-                <div class="incorrect">1</div>
+                <div class="incorrect">{{ $total_incorect }}</div>
             </div>
         </div>
         
@@ -44,8 +44,7 @@
     </div>
 
 <div class="button">
-    <hr>
-    <button class="cont">Continue</button>
+    <button class="cont"><a href="/home">Continue</a></button>
 </div>
 
 </body>

@@ -39,9 +39,8 @@ Route::get('/dict-hiragana', function () {
 Route::get('/dict-katakana', function () {
     return view('katakana');
 })->name('katakana');
-Route::get('/score', function () {
-    return view('score');
-});
+
+Route::get('/score',[QuestionController::class,'showScore']);
 
 Route::get('/{question}',[QuestionController::class,'index']);
 

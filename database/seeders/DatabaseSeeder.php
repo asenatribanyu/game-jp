@@ -38,13 +38,13 @@ class DatabaseSeeder extends Seeder
             'Answer'=>'じどうしゃ',
         ]);
 
-        // Question::create([
-        //     'Question'=>'1 bulan dalam bahasa jepang ?',
-        //     'Options 1'=>'Sangkagetsu',
-        //     'Options 2'=>'Yongkagetsu',
-        //     'Options 3'=>'Ikkagetsu',
-        //     'Options 4'=>'Futsuka',
-        //     'Answer'=>'Ikkagetsu',
-        // ]);
+        Question::create([
+            'Question'=>'1 bulan dalam bahasa jepang ?',
+            'Options_1'=>'Sangkagetsu',
+            'Options_2'=>'Yongkagetsu',
+            'Options_3'=>'Ikkagetsu',
+            'Options_4'=>'Futsuka',
+            'Answer'=>'Ikkagetsu',
+        ]);
     }
 }
