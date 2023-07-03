@@ -10,9 +10,10 @@
 </head>
 <body>
     {{-- @dd($question->Question); --}}
+    
     <div class="row-top">
-        <i class="fa-solid fa-circle-xmark" style="font-size:35px;"></i>
-        <span class="header-score"> 1 / 3</span>
+        <a href="/home"><i class="fa-solid fa-circle-xmark" style="font-size:35px;"></i></a>
+        <span class="header-score"> {{ $question->id }} / {{ $totalquestion }}</span>
     </div>
 
     <div class="row-mid">
@@ -21,43 +22,99 @@
                 <div class="quiz-header">
                     <span class="question-text">{{ $question->Question }} </span>
                 </div>
+                
+                
                 <div class="option-list">
-                    <form action="/submit" method="post">
-                        @csrf <input type="hidden" name="id" value="{{ $question->id}}">
-                        <button class="option" type="submit" name="answer" value="{{ $question->Options_1 }}">
+                    <form action="/submit" method="post" >
+                        @csrf 
+                        <input type="hidden" name="id" value="{{ $question->id}}">
+
+                        <button class="option {{ session('selected') == $question->Options_1 && $question->Answer == $question->Options_1 ? ' correct' : (session('selected') == $question->Options_1 && $question->Answer !== $question->Options_1 ? ' incorrect' :(session('selected') !== null && $question->Answer == $question->Options_1 ? ' correct' : ' '))  }}" type="submit" name="answer" value="{{ $question->Options_1 }}">
                             
                             <span>{{ $question->Options_1 }}</span>
                         </button>
-                        <button class="option" type="submit" name="answer" value="{{ $question->Options_2 }}">
+                        <button class="option {{ session('selected') == $question->Options_2 && $question->Answer == $question->Options_2 ? ' correct' : (session('selected') == $question->Options_2 && $question->Answer !== $question->Options_2 ? ' incorrect' :(session('selected') !== null && $question->Answer == $question->Options_2 ? ' correct' : ' '))  }}" type="submit" name="answer" value="{{ $question->Options_2 }}">
                             
                            <span> {{ $question->Options_2 }}</span>
                         </button>
-                        <button class="option" type="submit" name="answer" value="{{ $question->Options_3 }}">
+                        <button class="option {{ session('selected') == $question->Options_3 && $question->Answer == $question->Options_3 ? ' correct' : (session('selected') == $question->Options_3 && $question->Answer !== $question->Options_3 ? ' incorrect' :(session('selected') !== null && $question->Answer == $question->Options_3 ? ' correct' : ' '))  }}" type="submit" name="answer" value="{{ $question->Options_3 }}">
                             
                             <span> {{ $question->Options_3 }}</span>
                         </button>
-                        <button class="option" type="submit" name="answer" value="{{ $question->Options_4 }}">
+                        <button class="option {{ session('selected') == $question->Options_4 && $question->Answer == $question->Options_4 ? ' correct' : (session('selected') == $question->Options_4 && $question->Answer !== $question->Options_4 ? ' incorrect' :(session('selected') !== null && $question->Answer == $question->Options_4 ? ' correct' : ' '))  }}" type="submit" name="answer" value="{{ $question->Options_4 }}">
                             
                             <span>{{ $question->Options_4 }}</span>
                         </button>
                     </form>
-                    
                 </div>
-                {{-- <span class="info">2. Lorem ipsu sit amet.</span>
-                <span class="info">3. Lorem, ipsum.</span>
-                <span class="info">4. Lorem amet.</span> --}}
+                
+                
             </div>
         </section>
     </div>
 
     <div class="row-bot">
+        @if (session('success') == 1)
         <div class="btn-group">
             <i class="fa-regular fa-circle-check"><span>Correct Answer!</span></i>
-            <a href="#" class="info-btn continue-btn">Continue</a>
+            @if ($question->id +1 > $totalquestion)
+            <a href="/score" class="info-btn ">Continue</a>
+            @else
+            <a href="/{{ $question->id +1 }}" class="info-btn ">Continue</a>
+            @endif
+            
         </div>
+        @endif
+
+        @if ( session('success') === 2)
+        <div class="btn-group-wr">
+            <i class="fa-regular fa-circle-xmark"><span>Wrong Answer!</span></i>
+            @if ($question->id +1 > $totalquestion)
+            <a href="/score" class="info-btn ">Continue</a>
+            @else
+            <a href="/{{ $question->id +1 }}" class="info-btn ">Continue</a>
+            @endif
+        </div>
+        @endif
     </div>
 
     <script src="question.js"></script>
     <script src="quiz.js"></script>
+
+    <script>
+
+        
+    </script>
+    <script>
+    function disableButtons() {
+        var buttons = document.getElementsByClassName('option');
+        for (var i = 0; i < buttons.length; i++) {
+            buttons[i].disabled = true;
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        
+        var isSuccess = @json(session('success', false));
+
+        if (isSuccess === 1) {
+            document.body.style.backgroundColor = 'rgba(126, 207, 56, 0.25)';
+            disableButtons();
+        } else if (isSuccess === 2) {
+            document.body.style.backgroundColor = 'rgba(255, 0, 0, 0.25)';
+            var selectedAnswer = @json(session('selected_answer', ''));
+            var buttons = document.getElementsByClassName('option');
+            for (var i = 0; i < buttons.length; i++) {
+                if (buttons[i].value === selectedAnswer) {
+                    buttons[i].classList.add('selected-wrong');
+                }
+                buttons[i].disabled = true;
+            }
+        }
+        
+    });
+    
+    </script>
+    
 </body>
 </html>

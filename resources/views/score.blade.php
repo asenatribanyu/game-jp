@@ -45,7 +45,6 @@
 
 <div class="button">
     <hr>
-    <button class="review">Review Lesson</button>
     <button class="cont">Continue</button>
 </div>
 

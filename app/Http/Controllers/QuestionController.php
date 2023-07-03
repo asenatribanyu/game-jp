@@ -9,22 +9,35 @@ class QuestionController extends Controller
 {
     public function index(Question $question)
     {
+        $totalquestion = count(Question::all());
         $selectedOption = 1;
         return view('quiz', [
             'question'=>$question,
             'selectedOption'=>$selectedOption,
+            'totalquestion' => $totalquestion,
         ]);
     }
 
     public function submit(Request $request)
     {
-        // dd($request->answer);
-        $question = Question::findOrFail($request->id);
-        // $question=Question::where('id',$request->id)->get();
+    $success = null; // Default value is set to false
+    $question = Question::findOrFail($request->id);
+
     
-        if ($request->answer==$question->Answer){
-           return redirect()->back();
+    $selected = null;
+    if ($request->answer == $question->Answer) {
+        $success = 1; // Set to true if the answer is correct
+        $selected = $request->answer;
+        return redirect()->back()->with(compact('selected','success'));
+        
     }
-    dd("fail");
-}
+    else{
+        $success = 2;
+        $selected = $request->answer;
+        return redirect()->back()->with(compact('selected','success'));
+        
+    }
+    
+    }
+
 }

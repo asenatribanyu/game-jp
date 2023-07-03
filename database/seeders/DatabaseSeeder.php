@@ -21,12 +21,21 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
         Question::create([
-            'Question'=>'1 bulan dalam bahasa jepang ?',
-            'Options_1'=>'Sangkagetsu',
-            'Options_2'=>'Yongkagetsu',
-            'Options_3'=>'Ikkagetsu',
-            'Options_4'=>'Futsuka',
-            'Answer'=>'Ikkagetsu',
+            'Question'=>'地図 (peta)',
+            'Options_1'=>'ちす',
+            'Options_2'=>'ちず',
+            'Options_3'=>'ちづ',
+            'Options_4'=>'ちつ',
+            'Answer'=>'ちず',
+        ]);
+
+        Question::create([
+            'Question'=>'自動車 (mobil)',
+            'Options_1'=>'じどさ',
+            'Options_2'=>'じどうさ',
+            'Options_3'=>'じどしゃ',
+            'Options_4'=>'じどうしゃ',
+            'Answer'=>'じどうしゃ',
         ]);
 
         // Question::create([

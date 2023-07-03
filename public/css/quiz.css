@@ -10,7 +10,7 @@
 .body {
     position: relative;
     min-height: 100vh;
-    background-color: #e8eff2;
+    background-color: rgba(255, 255, 255, 0.25);
 }
 
 /* row top */
@@ -52,11 +52,25 @@
     align-items: center;
     margin: 0 240px;
 }
+.row-bot .btn-group-wr {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 240px;
+}
 
 .row-bot .btn-group .fa-regular {
     display: flex;
     justify-content: space-between;
     font-size: 40px;
+    color: #69ad2e;
+}
+
+.row-bot .btn-group-wr .fa-regular {
+    display: flex;
+    justify-content: space-between;
+    font-size: 40px;
+    color: #f85e5e;
 }
 .row-bot .btn-group .fa-regular span {
     display: flex;
@@ -64,6 +78,17 @@
     align-items: center;
     font-size: 30px;
     margin-left: 10px;
+    font-weight: bold;
+    color: #69ad2e;
+}
+.row-bot .btn-group-wr .fa-regular span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    margin-left: 10px;
+    font-weight: bold;
+    color: #f85e5e;
 }
 
 .row-bot .btn-group .info-btn {
@@ -84,14 +109,31 @@
     margin-top: 16px;
     transition: 0.5s;
 }
-.row-bot .btn-group .info-btn:nth-child(2) {
-    background: transparent;
-    color: #7ecf38;
-}
-
-.row-bot .btn-group .info-btn:nth-child(2):hover {
-    background: #7ecf38;
+.row-bot .btn-group-wr .info-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 130px;
+    height: 45px;
+    background: #f85e5e;
+    border: 2px solid #f85e5e;
+    outline: none;
     color: #fff;
+    font-weight: 600;
+    border-radius: 10px;
+    text-decoration: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    margin-top: 16px;
+    transition: 0.5s;
+}
+.row-bot .btn-group .info-btn:nth-child(2) {
+    background-color: #7ecf38;
+    color: #ffffff;
+}
+.row-bot .btn-group-wr .info-btn:nth-child(2) {
+    background-color: #f85e5e;
+    color: #ffffff;
 }
 
 /* end bot */
@@ -101,7 +143,7 @@
 .row-mid {
     position: relative;
     width: auto;
-    height: 512px;
+    height: 530px;
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -149,6 +191,9 @@
     background: #94989b;
     border-radius: 20px;
 }
+.option-list .option:hover {
+    cursor: pointer;
+}
 
 .option-list .option span {
     font-size: 32px;
@@ -157,6 +202,13 @@
     align-items: center;
     height: 170px;
     width: auto;
+}
+
+.option-list .correct {
+    background-color: #7ecf38; /* Change the background color to green for the correct answer */
+}
+.option-list .incorrect {
+    background-color: #f85e5e; /* Change the background color to green for the correct answer */
 }
 
 /* .row-mid .info {
