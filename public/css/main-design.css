@@ -1,0 +1,222 @@
+/* General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Quicksand", sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    background-color: #E8EFF2;
+    /* overflow: hidden; */
+}
+
+
+/* Side Navigation Bar */
+nav .sidebar {
+    position: fixed;
+    width: 207px;
+    height: 100%;
+    background: #D9E3E8;
+    padding: 11px 27px;
+    box-shadow: 1px 0px 4px rgba(0, 0, 0, 0.25);
+}
+
+.sidebar .logo-toggle {
+    width: 100%;
+}
+
+nav .sidebar h1 {
+    color: #A49DAE;
+    font-size: 48px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+hr.new1 {
+    border: 2px solid #A49DAE;
+    margin-bottom: 47px;
+}
+
+nav .sidebar ul li {
+    padding: 15px;
+    margin-bottom: 25px;
+}
+
+nav .sidebar ul li a {
+    color: #897B8B;
+    display: block;
+    font-size: 20px;    
+}
+
+nav .sidebar ul li a .fa-solid{
+    width: 25px;
+}
+
+nav .sidebar ul li a:hover {
+    color: #a795a9;
+}
+
+
+/* Hamburger Menu */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    position: relative;
+}
+
+.menu-toggle input {
+    position: absolute;
+    width: 40px;
+    height: 28px;
+    left: -5px;
+    top: -4px;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+/* Hamburger Menu Animation */
+.menu-toggle span:nth-child(2) {
+    transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4) {
+    transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2) {
+    transform:rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(4) {
+    transform:rotate(-45deg) translate(-1px, 0);
+}
+
+.menu-toggle input:checked ~ span:nth-child(3) {
+    opacity: 0;
+    transform:scale(0);
+}
+
+.menu-toggle span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: #A49DAE;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+/* End of Side Navbar */
+
+/* Container */
+.container {
+    width: auto;
+    height: auto;
+    margin-left: 207px;
+    /* display: flex;
+    justify-content: space-around; */
+    position: relative;
+    align-items: center;
+    padding: 55px 30px;
+}
+/* End of Container */
+
+
+@media screen and (min-width: 576px) { 
+    nav .navbar{ /*Untuk Menghilangkan Mobile Navbar Pada layar Desktop*/
+        display: none; 
+    }
+
+    .navbar ul {
+        display: none;
+    }
+}
+
+/* Ukuran Mobile dan Tablet  */
+@media screen and (max-width: 768px) {
+
+    /* Responsive Navbar */
+    .sidebar {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 999;
+    }
+
+    nav .navbar {
+        margin: 0 auto;
+        padding: 0 30px;
+        width: 100%;
+        height: 58px;
+        display: flex;
+        flex-direction: row;
+        background-color: #D9E3E8;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 1px 0px 4px rgba(0, 0, 0, 0.25);
+        z-index: 100;
+    }
+
+    .navbar ul {
+        display: flex;
+        position: absolute;
+        flex-direction: column;
+        top: 0;
+        left: 0;
+        width: 300px;
+        height: 100vh;
+        background: #D9E3E8;
+        padding: 82px 27px;
+        box-shadow: 1px 0px 4px rgba(0, 0, 0, 0.25);
+        z-index: -1;
+        transition: all 0.4s ease;
+        transform: translateX(-100%);
+    }
+
+    .navbar ul.active {
+        transform: translateX(0%);
+    }
+
+    .navbar ul li {
+        padding: 15px;
+        margin-bottom: 25px;
+    }
+    
+    .navbar ul li a {
+        color: #897B8B;
+        display: block;
+        font-size: 20px;    
+    }
+    
+    .navbar ul li a .fa-solid{
+        width: 25px;
+    }
+    
+    .container .sidebar {
+        left: -100;
+    }
+
+    .container .sidebar.active  {
+        transform: translateX(0%);
+    }
+
+    nav h1 {
+        color: #A49DAE;
+        font-size: 25px;
+    }
+    /* End Of Responsive Navbar */
+}

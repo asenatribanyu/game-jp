@@ -35,11 +35,17 @@ Route::get('/dictionary', function () {
 });
 
 Route::get('/dict-hiragana', function () {
-    return view('hiragana');
+    return view('dictionary/hiragana', [
+        "title" => "Hiragana",
+        'questions'=> Question::where('id',1)->get(),
+    ]);
 })->name('hiragana');
 
 Route::get('/dict-katakana', function () {
-    return view('katakana');
+    return view('dictionary/katakana', [
+        "title" => "Katakana",
+        'questions'=> Question::where('id',1)->get(),
+    ]);
 })->name('katakana');
 
 Route::get('/score',[QuestionController::class,'showScore']);
