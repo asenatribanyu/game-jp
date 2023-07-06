@@ -6,7 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Link CSS -->
-    <link rel="stylesheet" href="../css/home-design.css">
+    <link rel="stylesheet" href="../css/main-design.css">
+
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" 
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous"> -->
+    @stack('style')
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +20,7 @@
     <!-- Side Navbar Logos -->
     <script src="https://kit.fontawesome.com/1d9af05b36.js"></script>
 
-    <title>Japan Quiz | Home</title>
+    <title>Japan Quiz | {{ $title }}</title>
 </head>
 
 <body>
@@ -47,7 +51,6 @@
             <div></div> <!--untuk membuat Logo berada diposisi tengah!-->
         </div>
         
-
         <!-- Side Navigation Bar -->
         <div class="sidebar">
             <div class="logo-toggle">
@@ -67,19 +70,17 @@
 
     <!-- Main Content -->
     <div class="container">
-        <div class="main_content">
-            <div class="asd"></div>
-            <div class="text_button">
-                <h3>The online Japanese quiz that's easy to use and fun</h3>
-                <p>Try a quiz that engages students, generates leads</p>
-                <button>Try Quiz</button>
-            </div>
-            <h1 class="vertical" lang=ja>クイズ</h1>
-        </div>
+        @yield('content')
     </div>
 
+    
     <!-- Link JavaScript -->
-    <script src="../js/home-script.js"></script>
+    @stack('script')
+    <script src="../js/main-script.js"></script>
+    
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" 
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
+    </script> -->
 
 </body>
 </html>

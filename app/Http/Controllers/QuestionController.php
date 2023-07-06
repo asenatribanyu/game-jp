@@ -12,7 +12,7 @@ class QuestionController extends Controller
     {
         $totalquestion = count(Question::all());
         $selectedOption = 1;
-        return view('quiz', [
+        return view('quiz/quiz', [
             'question'=>$question,
             'selectedOption'=>$selectedOption,
             'totalquestion' => $totalquestion,
@@ -73,7 +73,7 @@ class QuestionController extends Controller
             $score->ip_address = $ipAddress;
             $score->quiz_attempt = $attempt_number;
             $score->question_id = $question->id;
-            $score->is_correct = true;
+            $score->is_correct = false;
             $score->save();
         }
         elseif ($countMaxAttempts == count(Question::all())) {
@@ -119,7 +119,7 @@ class QuestionController extends Controller
     // Calculate the total score percentage for the guest
     $total_score_percentage = number_format(($total_correct / $total_attempted) * 100, 2);
 
-    return view('score', [
+    return view('score/score', [
         'total_correct' => $total_correct,
         'total_incorect' => $total_incorrect,
         'total_attempted' => $total_attempted,

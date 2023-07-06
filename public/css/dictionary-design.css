@@ -1,0 +1,44 @@
+
+.button-container {
+    /* display: grid; */
+    display: flex;
+    justify-content: center;
+    /*  place-items: center; */
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Mengatur lebar kolom sesuai dengan kebutuhan */
+    gap: 30px; 
+    
+    
+  }
+
+.button-container .alert{
+  width: 180px;
+  height: 150px;
+  margin-top: 220px; 
+  text-align: center;
+}
+
+
+.button-container .alert-info {
+  background-color: #E8F0F3; /* Mengubah warna latar belakang tombol "Hiragana" */
+}
+
+.button-container .alert-danger {
+  background-color: #FFA8A8; /* Mengubah warna latar belakang tombol "Hiragana" */
+}
+
+.button-container button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 20px;
+}
+
+.button-container button img {
+  margin-bottom: 5px;
+}
+  
+.icon {
+  width: 80px;
+  height: 80px;
+  /* margin-right: 5px;   */
+}

@@ -17,27 +17,38 @@ use App\http\Controllers\QuestionController;
 
 
 Route::get('/', function () {
-    return view('home',[
+    return view('home/home', [
+        "title" => "Home",
         'questions'=> Question::where('id',1)->take(1)->get(),
     ]);
 });
 
 Route::get('/home', function () {
-    return view('home',[
+    return view('home/home', [
+        "title" => "Home",
         'questions'=> Question::where('id',1)->get(),
     ]);
 });
 
 Route::get('/dictionary', function () {
-    return view('dictionary');
+    return view('dictionary/dictionary', [
+        "title" => "Dictionary",
+        'questions'=> Question::where('id',1)->get(),
+    ]);
 });
 
 Route::get('/dict-hiragana', function () {
-    return view('hiragana');
+    return view('dictionary/hiragana', [
+        "title" => "Hiragana",
+        'questions'=> Question::where('id',1)->get(),
+    ]);
 })->name('hiragana');
 
 Route::get('/dict-katakana', function () {
-    return view('katakana');
+    return view('dictionary/katakana', [
+        "title" => "Katakana",
+        'questions'=> Question::where('id',1)->get(),
+    ]);
 })->name('katakana');
 
 Route::get('/score',[QuestionController::class,'showScore']);
