@@ -1,64 +1,35 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.main')
 
-        <link rel="shortcut icon" href="{{ asset('assets/icon/icon1.ico') }}"> 
-        <title>Game Jp</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" 
-                integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-        
-        
-        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-    </head>
+@push('style')
+  <link rel="stylesheet" href="../css/char-design.css">
+@endpush
 
-
-    <body>
-    <nav class="navbar">
-        <!-- <h3>Logo</h3> -->
-        <div class="navbar-nav">
-            <h3>Logo</h3>
-            <a class="nav-link" href="#">
-              <img src="assets/icon/home.png" alt="Logo" class="navbar-logo">
-              Home
-            </a>
-            <a class="nav-link" href="#">
-              <img src="assets/icon/quiz-1.png" alt="Logo" class="navbar-logo">
-              Quiz
-            </a>
-            <a class="nav-link" href="/dictionary">
-              <img src="assets/icon/dict.png" alt="Logo" class="navbar-logo">
-              Dictionary
-            </a>
-        </div>
-    </nav>
-    
-    <body>
+@section('content')
 
     <div class="button-container">
         <button type="button" class="alert alert-info" onclick="window.location.href='{{ route('hiragana') }}'">Hiragana</button>
         <button type="button" class="alert alert-danger" onclick="window.location.href='{{ route('katakana') }}'">Katakana</button>
     </div>
     
-    
+<div class="main_char">
+      
     <div class="card-container">
-   <div class="card-row">
-     <div class="card">
-      <!-- <img src="gambar.jpg" alt="Gambar" /> -->
-        <div class="card-content">
-          <h2>ア</h2>
-          <p>a</p>
+      <div class="card-row">
+        <div class="card">
+          <!-- <img src="gambar.jpg" alt="Gambar" /> -->
+          <div class="card-content">
+            <h2>ア</h2>
+            <p>a</p>
+          </div>
         </div>
-      </div>
 
-      <div class="card">
-      <!-- <img src="gambar.jpg" alt="Gambar" /> -->
-        <div class="card-content">
-          <h2>イ</h2>
-          <p>i</p>
+        <div class="card">
+          <!-- <img src="gambar.jpg" alt="Gambar" /> -->
+          <div class="card-content">
+            <h2>イ</h2>
+            <p>i</p>
+          </div>
         </div>
-      </div>
 
       <div class="card">
       <!-- <img src="gambar.jpg" alt="Gambar" /> -->
@@ -431,150 +402,7 @@
       </div>
     </div>
 
+  </div>
 </div>
-
-   
-
-    <!-- <table class="table table-secondary table-striped small-table">
-    <thead>
-    <tr>
-      <th scope="col">Romaji</th>
-      <th scope="col">Hiragana</th>
-      <th scope="col">Katakana</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>a</td>
-      <td>あ</td>
-      <td>ア</td>
-    </tr>
-    <tr>
-      <td>i</td>
-      <td>い</td>
-      <td>イ</td>
-    </tr>
-    <tr> 
-      <td>u</td>
-      <td>う</td>
-      <td>ウ</td>
-    </tr>
-    <tr> 
-      <td>e</td>
-      <td>え</td>
-      <td>エ</td>
-    </tr>
-    <tr> 
-      <td>o</td>
-      <td>お</td>
-      <td>オ</td>
-    </tr>
-    <tr> 
-      <td>ka</td>
-      <td>か</td>
-      <td>カ</td>
-    </tr>
-    <tr> 
-      <td>ki</td>
-      <td>き</td>
-      <td>キ</td>
-    </tr>
-    <tr> 
-      <td>ku</td>
-      <td>く</td>
-      <td>ク</td>
-    </tr>
-    <tr> 
-      <td>ke</td>
-      <td>け</td>
-      <td>ケ</td>
-    </tr>
-    <tr> 
-      <td>ko</td>
-      <td>こ</td>
-      <td>コ</td>
-    </tr>
-    <tr> 
-      <td>sa</td>
-      <td>さ</td>
-      <td>サ</td>
-    </tr>
-    <tr> 
-      <td>shi</td>
-      <td>し</td>
-      <td>シ</td>
-    </tr>
-    <tr> 
-      <td>su</td>
-      <td>す</td>
-      <td>ス</td>
-    </tr>
-    <tr> 
-      <td>se</td>
-      <td>せ</td>
-      <td>セ</td>
-    </tr>
-    <tr> 
-      <td>so</td>
-      <td>そ</td>
-      <td>ソ </td>
-    </tr>
-    <tr> 
-      <td>ta</td>
-      <td>た</td>
-      <td>o</td>
-    </tr>
-    <tr> 
-      <td>ka</td>
-      <td>か</td>
-      <td>カ</td>
-    </tr>
-    <tr> 
-      <td>ka</td>
-      <td>か</td>
-      <td>カ</td>
-    </tr>
-    <tr> 
-      <td>ka</td>
-      <td>か</td>
-      <td>カ</td>
-    </tr>
-    <tr> 
-      <td>ka</td>
-      <td>か</td>
-      <td>カ</td>
-    </tr>
-    <tr> 
-      <td>ka</td>
-      <td>か</td>
-      <td>カ</td>
-    </tr>
-    <tr> 
-      <td>ka</td>
-      <td>か</td>
-      <td>カ</td>
-    </tr>
-    <tr> 
-      <td>ka</td>
-      <td>か</td>
-      <td>カ</td>
-    </tr>
-    <tr> 
-      <td>ka</td>
-      <td>か</td>
-      <td>カ</td>
-    </tr>
-    <tr> 
-      <td>ka</td>
-      <td>か</td>
-      <td>カ</td>
-    </tr>
-  </tbody>
-    </table> -->
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" 
-        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
-    </script>
-
-    </body>
-</html>
+    
+@endsection

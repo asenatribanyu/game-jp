@@ -1,19 +1,43 @@
 
+.main-content {
+  padding: 0 95px;
+  margin: auto;
+  /* margin-top: 70px; */
+  max-width: 1173px;
+  width: 100%;
+  height: 611px;
+  border-radius: 10px;
+  border: 3px solid #c2bbcd;
+  background-image: url(../img/JapanFlag.jpg);
+  background-size: 1173px 611px;
+  background-position: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.asd{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color:white;
+  opacity: 60%;
+  border-radius: 10px;
+}
+
 .button-container {
-    /* display: grid; */
-    display: flex;
-    justify-content: center;
-    /*  place-items: center; */
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Mengatur lebar kolom sesuai dengan kebutuhan */
-    gap: 30px; 
-    
-    
-  }
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  z-index: 2;
+}
 
 .button-container .alert{
-  width: 180px;
-  height: 150px;
-  margin-top: 220px; 
+  width: 330px;
+  height: 175px;
   text-align: center;
 }
 
@@ -26,19 +50,88 @@
   background-color: #FFA8A8; /* Mengubah warna latar belakang tombol "Hiragana" */
 }
 
+.alert-info:hover {
+  background-color: #dde6e9;
+}
+
+.alert-danger:hover {
+  background-color: #eda2a2;
+}
+
 .button-container button {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  font-size: 20px;
+  font-size: 24px;
+  border-radius: 20px;
+  cursor: pointer;
 }
 
-.button-container button img {
-  margin-bottom: 5px;
-}
-  
 .icon {
   width: 80px;
   height: 80px;
-  /* margin-right: 5px;   */
+  /* margin-right: 5px;*/
 }
+
+@media screen and (min-width: 576px) { 
+  .button-container {
+    gap: 30px;
+  }
+}
+
+@media screen and (max-width: 1030px) {
+
+  .container .main-content {
+    background-position: 50%;
+  }
+
+}
+
+@media screen and (max-width: 860px) {
+
+  .container .main-content {
+      padding: 0 50px;
+  }
+
+}
+
+/* Ukuran Mobile dan Tablet */
+@media screen and (max-width: 768px) {
+
+  /* Responsive Main Content */
+  .container {
+      margin-left: 0;
+      margin-top: 90px;
+      padding: 0px 30px;
+  }
+
+  .button-container {
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+}
+
+@media screen and (max-width: 576px) {
+
+  .container .main-content {
+    background-size: 300%;
+    background-repeat: no-repeat;
+}
+
+  .button-container .alert{
+    width: 180px;
+    height: 150px;
+    text-align: center;
+  }
+
+  .button-container {
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  
+}
+

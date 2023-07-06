@@ -2,6 +2,7 @@
 /* Main Content */
 .container .main_content {
     padding: 0 95px;
+    margin: auto;
     /* margin-top: 70px; */
     max-width: 1173px;
     width: 100%;
