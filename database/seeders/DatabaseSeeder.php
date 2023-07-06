@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Question;
+use App\Models\Score;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
@@ -46,5 +47,24 @@ class DatabaseSeeder extends Seeder
             'Options_4'=>'Futsuka',
             'Answer'=>'Ikkagetsu',
         ]);
+        // Score::create([
+        //     'ip_address'=>'127.0.0.1',
+        //     'quiz_attempt'=> '1',
+        //     'question_id' => '1',
+        //     'is_correct' => '1'
+        // ]);
+        // Score::create([
+        //     'ip_address'=>'127.0.0.1',
+        //     'quiz_attempt'=> '1',
+        //     'question_id' => '2',
+        //     'is_correct' => '1'
+        // ]);
+        // Score::create([
+        //     'ip_address'=>'127.0.0.1',
+        //     'quiz_attempt'=> '1',
+        //     'question_id' => '3',
+        //     'is_correct' => '1'
+        // ]);
+        
     }
 }

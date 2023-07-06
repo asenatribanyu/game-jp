@@ -17,12 +17,14 @@ use App\http\Controllers\QuestionController;
 
 
 Route::get('/', function () {
+    session()->put('score', 0);
     return view('home',[
         'questions'=> Question::where('id',1)->take(1)->get(),
     ]);
-});
+})->name('home');
 
 Route::get('/home', function () {
+    session()->put('score', 0);
     return view('home',[
         'questions'=> Question::where('id',1)->get(),
     ]);
@@ -45,5 +47,6 @@ Route::get('/score',[QuestionController::class,'showScore']);
 Route::get('/{question}',[QuestionController::class,'index']);
 
 Route::post('/submit',[QuestionController::class,'submit']);
+
   
 

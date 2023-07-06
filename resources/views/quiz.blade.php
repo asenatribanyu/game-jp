@@ -60,7 +60,7 @@
             @if ($question->id +1 > $totalquestion)
             <a href="/score" class="info-btn ">Continue</a>
             @else
-            <a href="/{{ $question->id +1 }}" class="info-btn ">Continue</a>
+            <a href="/{{ $question->id + 1 }}" class="info-btn ">Continue</a>
             @endif
             
         </div>
@@ -82,8 +82,11 @@
     <script src="quiz.js"></script>
 
     <script>
-
-        
+        if (window.performance) {
+            if (window.performance.navigation.type === 1) {
+                window.location.href = "{{ route('home') }}";
+            }
+        }
     </script>
     <script>
     function disableButtons() {

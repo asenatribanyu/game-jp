@@ -15,7 +15,7 @@ return new class extends Migration
         Schema::create('scores', function (Blueprint $table) {
             $table->id();
             $table->string('ip_address');
-            $table->string('quiz_attempt');
+            $table->unsignedInteger('quiz_attempt');
             $table->foreignId('question_id');
             $table->boolean('is_correct');
             $table->timestamps();
