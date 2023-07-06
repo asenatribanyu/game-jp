@@ -47,7 +47,7 @@ class QuestionController extends Controller
         $total_correct = session('score');
         $total_incorrect = $totalquestion - $total_correct;
         $total_score_percentage = number_format(($total_correct / $totalquestion) * 100,2);
-        return view('score', [
+        return view('score/score', [
             'total_correct' => $total_correct,
             'total_incorect' => $total_incorrect,
             'total_score_percentage' => $total_score_percentage,

@@ -17,21 +17,24 @@ use App\http\Controllers\QuestionController;
 
 
 Route::get('/', function () {
-    session()->put('score', 0);
-    return view('home',[
+    return view('home/home', [
+        "title" => "Home",
         'questions'=> Question::where('id',1)->take(1)->get(),
     ]);
 })->name('home');
 
 Route::get('/home', function () {
-    session()->put('score', 0);
-    return view('home',[
+    return view('home/home', [
+        "title" => "Home",
         'questions'=> Question::where('id',1)->get(),
     ]);
-});
+})->name('home');
 
 Route::get('/dictionary', function () {
-    return view('dictionary');
+    return view('dictionary/dictionary', [
+        "title" => "Dictionary",
+        'questions'=> Question::where('id',1)->get(),
+    ]);
 });
 
 Route::get('/dict-hiragana', function () {
@@ -53,6 +56,5 @@ Route::get('/score',[QuestionController::class,'showScore']);
 Route::get('/{question}',[QuestionController::class,'index']);
 
 Route::post('/submit',[QuestionController::class,'submit']);
-
   
 
