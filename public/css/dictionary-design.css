@@ -39,6 +39,7 @@
   width: 330px;
   height: 175px;
   text-align: center;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 
@@ -118,6 +119,7 @@
   .container .main-content {
     background-size: 300%;
     background-repeat: no-repeat;
+    height: 550px;
 }
 
   .button-container .alert{

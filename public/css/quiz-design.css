@@ -7,10 +7,10 @@
     font-family: "Quicksand", sans-serif;
 }
 
-.body {
+body {
     position: relative;
     min-height: 100vh;
-    background-color: rgba(255, 255, 255, 0.25);
+    background-color: #E8EFF2;
 }
 
 /* row top */
@@ -18,6 +18,7 @@
     position: relative;
     display: flex;
     width: auto;
+    padding: 30px;
     height: 47px;
     justify-content: space-between;
     align-items: center;
@@ -142,47 +143,61 @@
 
 .row-mid {
     position: relative;
-    width: auto;
+    max-width: 100%;
     height: 530px;
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     flex-wrap: wrap;
     font-weight: 500;
-    background-color: #ffffff;
-    border-radius: 6px;
+    background-image: url(../img/JapanFlag.jpg);
+    background-size: 1173px 611px;
+    background-position: 50%;
     margin: 0 10px;
-    padding-bottom: 50px;
     border-radius: 20px;
     outline: 2px solid #a49dae;
 }
+
+.asd{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color:white;
+    opacity: 60%;
+    border-radius: 10px;
+}
+
 .quiz-section {
+    width: 100%;
+    height: 100%;
     display: flex;
-    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .quiz-section .quiz-box {
     position: relative;
-    width: 725px;
-    height: 500px;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     z-index: 100;
+    gap: 30px;
 }
 
 .quiz-header .question-text {
     font-family: "quicksand";
-    font-size: 36px;
+    font-size: 32px;
 }
 
 .option-list {
+    width: 100%;
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    width: 1271px;
-    height: 200px;
+    justify-content: center;
+    align-items: center;
 }
 
 .option-list .option {
@@ -191,16 +206,25 @@
     background: #94989b;
     border-radius: 20px;
 }
+
+.option-list form {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-evenly;
+}
+
 .option-list .option:hover {
     cursor: pointer;
 }
 
 .option-list .option span {
-    font-size: 32px;
+    font-size: 24px;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 170px;
+    height: 100%;
     width: auto;
 }
 
@@ -219,3 +243,109 @@
     margin: 4px 0;
 } */
 /* end */
+
+
+@media screen and (max-width: 1220px) {
+    .option-list .option {
+        width: 250px;
+        height: 175px;
+        background: #94989b;
+        border-radius: 20px;
+    }
+}
+
+@media screen and (max-width: 1070px) {
+    .row-bot .btn-group {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 0;
+    }
+
+    .row-bot .btn-group-wr {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 0;
+    }
+
+    .option-list form {
+        align-items: center;
+        align-content: center;
+        justify-content: space-evenly;
+    }
+
+    .option-list .option {
+        width: 200px;
+        height: 150px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .option-list .option {
+        width: 175px;
+        height: 100px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .row-mid {
+        background-size: 250%;
+        background-repeat: no-repeat;
+    }
+
+    .quiz-header .question-text {
+        font-size: 24px;
+    }
+
+    .row-top {
+        position: relative;
+        display: flex;
+        width: auto;
+        padding: 30px;
+        height: 47px;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0;
+    }
+
+    .row-bot .btn-group .fa-regular span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        margin-left: 10px;
+        font-weight: bold;
+        color: #69ad2e;
+    }
+    .row-bot .btn-group-wr .fa-regular span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        margin-left: 10px;
+        font-weight: bold;
+        color: #f85e5e;
+    }
+
+    .option-list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .option-list .option {
+        width: 175px;
+        height: 100px;
+        background: #94989b;
+        border-radius: 20px;
+    }
+
+    .option-list .correct {
+        background-color: #7ecf38; /* Change the background color to green for the correct answer */
+    }
+    .option-list .incorrect {
+        background-color: #f85e5e; /* Change the background color to green for the correct answer */
+    }
+}

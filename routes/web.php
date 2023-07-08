@@ -30,6 +30,12 @@ Route::get('/home', function () {
     ]);
 })->name('home');
 
+Route::get('/start-quiz', function() {
+    return view('preload/preload', [
+        'questions'=> Question::where('id',1)->get(),
+    ]);
+});
+
 Route::get('/dictionary', function () {
     return view('dictionary/dictionary', [
         "title" => "Dictionary",

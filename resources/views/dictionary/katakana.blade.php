@@ -8,7 +8,7 @@
 
     <div class="button-container">
         <button type="button" class="alert alert-info" onclick="window.location.href='{{ route('hiragana') }}'">Hiragana</button>
-        <button type="button" class="alert alert-danger" onclick="window.location.href='{{ route('katakana') }}'">Katakana</button>
+        <button type="button" class="alert alert-danger" style="background-color: salmon;" onclick="window.location.href='{{ route('katakana') }}'">Katakana</button>
     </div>
     
 <div class="main_char">

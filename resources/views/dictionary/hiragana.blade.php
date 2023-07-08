@@ -7,7 +7,7 @@
 @section('content')
 
 <div class="button-container">
-  <button type="button" class="alert alert-info" onclick="window.location.href='{{ route('hiragana') }}'">Hiragana</button>
+  <button type="button" class="alert alert-info" style="background-color: salmon;" onclick="window.location.href='{{ route('hiragana') }}'">Hiragana</button>
   <button type="button" class="alert alert-danger" onclick="window.location.href='{{ route('katakana') }}'">Katakana</button>
 </div>
 

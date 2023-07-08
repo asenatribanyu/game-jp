@@ -16,15 +16,16 @@
   height: 60px; 
   text-align: center;
   border-radius: 10px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.button-container .alert-info {
-  background-color: #dfeef3; /* Mengubah warna latar belakang tombol "Hiragana" */
-}
+/* .button-container .alert-info {
+  background-color: #dfeef3; 
+} */
 
-.button-container .alert-danger {
-  background-color: #dfeef3; /* Mengubah warna latar belakang tombol "Hiragana" */
-}
+/* .button-container .alert-danger {
+  background-color: #dfeef3;
+} */
 
 .button-container .alert-info:hover {
   background-color: #d2d8db; 
@@ -118,7 +119,7 @@
   /* Responsive Main Content */
   .container {
       margin-left: 0;
-      margin-top: 90px;
+      margin-top: 75px;
       padding: 0px 30px;
   }
 

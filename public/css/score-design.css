@@ -1,41 +1,52 @@
-body {
-    background-color: #ffffffff;
-    text-align: center;
-    width: 99%;
-    height: 99%;
+/* General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: "Quicksand", sans-serif;
+    list-style: none;
+    text-decoration: none;
+    height: auto;
 }
-/* .txt{
-    width: auto;
-    height: 50px;
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: #E8EFF2;
+    text-align: center;
+    /* overflow: hidden; */
+}
+
+/* Container */
+.container {
+    /* margin-top: 80px; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
     position: relative;
-    margin-bottom: 45px;
-} */
+    align-items: center;
+    padding: 30px 30px 90px 30px;
+}
+/* End of Container */
+
+.main-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin: auto;
+}
 
 .text {
-    margin-top: 6%;
-    position: relative;
+    margin: auto;
+    text-align: center;
 }
 
-.container.text h1 {
-    display: block;
-    padding-top: 2px;
-}
-/* .txt.text.img{
-    width: 170px;
-    height: 165px;
-} */
-.container {
-    width: auto;
-    height: 600px;
-    display: flex;
-    justify-content: center;
-    padding-top: 2.5%;
-}
-
-/* card score */
 .row {
-    position: absolute;
+    /* position: absolute; */
     bottom: 20%;
     width: 763px;
     height: 170px;
@@ -45,6 +56,27 @@ body {
     margin-bottom: 10px;
 }
 
+/* .container {
+    width: auto;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    padding-top: 2.5%;
+} */
+
+.container.text h1 {
+    display: block;
+    padding-top: 2px;
+}
+/* .txt.text.img{
+    width: 170px;
+    height: 165px;
+} */
+
+
+/* card score */
+
+
 .cardCorrect {
     display: flex;
     align-content: flex-end;
@@ -53,9 +85,9 @@ body {
     color: white;
     height: 118px;
     width: 200px;
+    font-size: 28px;
     border-radius: 20px;
     border: 3px solid;
-    font-size: 28px;
     justify-content: space-evenly;
 }
 .cardScore {
@@ -118,7 +150,7 @@ body {
     line-height: 2.5;
 }
 
-.review:hover {
+/* .review:hover {
     display: inline-block;
     width: 200px;
     height: 45px;
@@ -126,9 +158,9 @@ body {
     border-radius: 10px;
     margin-right: 350px;
     font-size: 20px;
-}
+} */
 
-.cont:hover {
+/* .cont:hover {
     display: inline-block;
     width: 143px;
     height: 45px;
@@ -137,7 +169,8 @@ body {
     margin-left: 350px;
     font-size: 20px;
     margin-top: 1%;
-}
+} */
+
 .review {
     display: inline-block;
     width: 200px;
@@ -150,29 +183,103 @@ body {
 }
 
 /* card score */
-
-/* card score */
-.button {
-    border-top: 1px solid black;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    text-decoration: none;
-    padding-right: 110px;
+.button-container {
+    border-top: 2px solid #c2bbcd;
+    padding: 35px 0;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: end;
 }
-.button .cont {
-    display: inline-block;
-    width: 143px;
-    height: 45px;
-    background-color: #7ecf38;
-    border-radius: 20px;
-    margin-top: 8px;
+
+.button-container div {
+    width: 763px;
+    margin: auto;
+    /* padding-right: 30px; */
+}
+
+.button-container button {
+    border: 1px solid #a5ae9d;
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
     font-size: 20px;
-    text-decoration: none;
+    font-weight: bold;
+    line-height: 32px;
+    background-color: #48d344;
+    color: #ffffff;
+}
+
+button:hover {
+    color: #ffffff;
+    background-color: #4de048;
+    cursor: pointer;
 }
 
 a:link,
 a:visited {
     text-decoration: none;
     color: black;
+}
+
+@media screen and (max-width: 576px) {
+    .main-container {
+        height: 100%;
+        gap: 0;
+    }
+
+    .row {
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+    }
+
+    .button-container {
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .button-container div {
+        width: 100%;
+    }
+
+    .cardCorrect {
+        width: 180px;
+        height: 100px;
+        font-size: 28px;
+    }
+
+    .cardScore {
+        width: 180px;
+        height: 100px;
+        font-size: 28px;
+    }
+
+    .cardIncorrect {
+        width: 180px;
+        height: 100px;
+        font-size: 28px;
+    }
+
+    .child {
+        width: 50%;
+        width: 180px;
+        height: 65px;
+    }
+
+    .childd {
+        width: 50%;
+        width: 180px;
+        height: 65px;
+    }
+
+    .childdd {
+        width: 50%;
+        width: 180px;
+        height: 65px;
+    }
 }

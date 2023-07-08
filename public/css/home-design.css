@@ -1,6 +1,7 @@
 
 /* Main Content */
 .container .main_content {
+    position: relative;
     padding: 0 95px;
     margin: auto;
     /* margin-top: 70px; */
@@ -30,6 +31,7 @@
 }
 
 .text_button{
+    position: relative;
     display: flex;
     flex-direction: column;
     z-index: 2;

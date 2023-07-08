@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QUIZ</title>
+    <title>Japan Quiz | Take the Quiz</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="css/quiz-design.css">
+    <link rel="stylesheet" href="../css/quiz-design.css">
 </head>
 <body>
     {{-- @dd($question->Question); --}}
@@ -17,12 +17,12 @@
     </div>
 
     <div class="row-mid">
+        <div class="asd"></div>
         <section class="quiz-section">
             <div class="quiz-box">
                 <div class="quiz-header">
                     <span class="question-text">{{ $question->Question }} </span>
                 </div>
-                
                 
                 <div class="option-list">
                     <form action="/submit" method="post" >
@@ -35,7 +35,7 @@
                         </button>
                         <button class="option {{ session('selected') == $question->Options_2 && $question->Answer == $question->Options_2 ? ' correct' : (session('selected') == $question->Options_2 && $question->Answer !== $question->Options_2 ? ' incorrect' :(session('selected') !== null && $question->Answer == $question->Options_2 ? ' correct' : ' '))  }}" type="submit" name="answer" value="{{ $question->Options_2 }}">
                             
-                           <span> {{ $question->Options_2 }}</span>
+                            <span> {{ $question->Options_2 }}</span>
                         </button>
                         <button class="option {{ session('selected') == $question->Options_3 && $question->Answer == $question->Options_3 ? ' correct' : (session('selected') == $question->Options_3 && $question->Answer !== $question->Options_3 ? ' incorrect' :(session('selected') !== null && $question->Answer == $question->Options_3 ? ' correct' : ' '))  }}" type="submit" name="answer" value="{{ $question->Options_3 }}">
                             
@@ -47,8 +47,6 @@
                         </button>
                     </form>
                 </div>
-                
-                
             </div>
         </section>
     </div>
@@ -78,6 +76,7 @@
         @endif
     </div>
 
+    <!-- Link Script -->
     <script src="question.js"></script>
     <script src="quiz.js"></script>
 
@@ -88,35 +87,35 @@
             }
         }
     </script>
+    
     <script>
-    function disableButtons() {
-        var buttons = document.getElementsByClassName('option');
-        for (var i = 0; i < buttons.length; i++) {
-            buttons[i].disabled = true;
-        }
-    }
-
-    document.addEventListener('DOMContentLoaded', function () {
-        
-        var isSuccess = @json(session('success', false));
-
-        if (isSuccess === 1) {
-            document.body.style.backgroundColor = 'rgba(126, 207, 56, 0.25)';
-            disableButtons();
-        } else if (isSuccess === 2) {
-            document.body.style.backgroundColor = 'rgba(255, 0, 0, 0.25)';
-            var selectedAnswer = @json(session('selected_answer', ''));
+        function disableButtons() {
             var buttons = document.getElementsByClassName('option');
             for (var i = 0; i < buttons.length; i++) {
-                if (buttons[i].value === selectedAnswer) {
-                    buttons[i].classList.add('selected-wrong');
-                }
                 buttons[i].disabled = true;
             }
         }
-        
-    });
-    
+
+        document.addEventListener('DOMContentLoaded', function () {
+            
+            var isSuccess = @json(session('success', false));
+
+            if (isSuccess === 1) {
+                document.body.style.backgroundColor = 'rgba(126, 207, 56, 0.25)';
+                disableButtons();
+            } else if (isSuccess === 2) {
+                document.body.style.backgroundColor = 'rgba(255, 0, 0, 0.25)';
+                var selectedAnswer = @json(session('selected_answer', ''));
+                var buttons = document.getElementsByClassName('option');
+                for (var i = 0; i < buttons.length; i++) {
+                    if (buttons[i].value === selectedAnswer) {
+                        buttons[i].classList.add('selected-wrong');
+                    }
+                    buttons[i].disabled = true;
+                }
+            }
+            
+        });
     </script>
     
 </body>
