@@ -83,7 +83,7 @@
     <script>
         if (window.performance) {
             if (window.performance.navigation.type === 1) {
-                window.location.href = "{{ route('home') }}";
+                window.location.href = "{{ route('Start') }}";
             }
         }
     </script>

@@ -24,9 +24,11 @@
                 <p>Try a quiz that engages students, generates leads</p>
             </div>
         </div>
+        @foreach ($questions as $question)
         <div class="button">
-            <button>Start Quiz</button>
+           <a href="{{ $question->id }}"> <button>Start Quiz</button></a>
         </div>
+        @endforeach
     </div>
     
 </body>

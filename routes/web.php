@@ -20,42 +20,38 @@ Route::get('/', function () {
     session()->put('score',0);
     return view('home/home', [
         "title" => "Home",
-        'questions'=> Question::where('id',1)->take(1)->get(),
     ]);
-})->name('home');
+});
 
 Route::get('/home', function () {
     session()->put('score',0);
     return view('home/home', [
         "title" => "Home",
-        'questions'=> Question::where('id',1)->get(),
     ]);
-})->name('home');
+});
 
 Route::get('/start-quiz', function() {
+    session()->put('score',0);
     return view('preload/preload', [
         'questions'=> Question::where('id',1)->get(),
     ]);
-});
+})->name('Start');
 
 Route::get('/dictionary', function () {
     return view('dictionary/dictionary', [
         "title" => "Dictionary",
-        'questions'=> Question::where('id',1)->get(),
     ]);
 });
 
 Route::get('/dict-hiragana', function () {
     return view('dictionary/hiragana', [
         "title" => "Hiragana",
-        'questions'=> Question::where('id',1)->get(),
     ]);
 })->name('hiragana');
 
 Route::get('/dict-katakana', function () {
     return view('dictionary/katakana', [
         "title" => "Katakana",
-        'questions'=> Question::where('id',1)->get(),
     ]);
 })->name('katakana');
 
