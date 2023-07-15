@@ -2,7 +2,7 @@
 
 use App\Models\Question;
 use Illuminate\Support\Facades\Route;
-use App\http\Controllers\QuestionController;
+use App\Http\Controllers\QuestionController;
 
 /*
 |--------------------------------------------------------------------------
